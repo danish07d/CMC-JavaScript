@@ -1,0 +1,93 @@
+
+.star-cb-group {
+  /* remove inline-block whitespace */
+  font-size: 0;
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  /* the hidden clearer */
+}
+.star-cb-group * {
+  font-size: 1rem;
+}
+.star-cb-group > input {
+  display: none;
+}
+.star-cb-group > input + label {
+  /* only enough room for the star */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 9999px;
+  width: 25px;
+  height: 28px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.star-cb-group > label:hover
+{
+    /*transform: rotate(360deg);*/
+    transition: all 2s;
+    -webkit-transition: all 2s;
+}
+    
+.rating-div
+{
+  margin-top:20px;
+}
+.star-cb-group > input + label:before {
+  display: inline-block;
+  text-indent: -9999px;
+  content: '\f005';
+    color: #cecbcb;
+    font-size: 20px;
+    font-family: FontAwesome;
+}
+.star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
+  content: '\f005';
+  color: #fb2524;
+  font-size: 20px;
+    font-family: FontAwesome;
+}
+.star-cb-group > .star-cb-clear + label {
+  text-indent: -9999px;
+  width: 0.5em;
+  margin-left: -0.5em;
+}
+.star-cb-group > .star-cb-clear + label:before {
+  width: 0.5em;
+}
+.star-cb-group:hover > input + label:before {
+  content: '\f005';
+  color: #888;
+  text-shadow: none;
+  font-family: FontAwesome;
+}
+.star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
+  content: '\f005';
+  color: #fb2524;
+  font-family: FontAwesome;
+  text-shadow: none;
+}
+:root {
+  font-size: 2em;
+  font-family: Helvetica, arial, sans-serif;
+}
+#log {
+  margin: 25px auto;
+  width: 5em;
+  text-align: center;
+  background: transparent;
+}
+.star-cb-group label:hover .star-cb-group
+{
+  position:relative;
+}
+.star-cb-group label:hover:after {
+  content: attr(aria-label);
+  position: absolute;
+  left: 21px;
+  top: 90%;
+  background:#fff;
+  color:#fb2524;
+  font-size:12px;
+}

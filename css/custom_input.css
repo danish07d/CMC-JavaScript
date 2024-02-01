@@ -1,0 +1,336 @@
+.input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 5px;
+    width: calc(100% - 2em);
+    vertical-align: top;
+}
+
+.input__field {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0.8em;
+    width: 60%;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #aaa;
+    font-weight: normal;
+    -webkit-appearance: none;
+    /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+    outline: none;
+}
+
+.input__label {
+    display: inline-block;
+    float: right;
+    padding: 0 1em;
+    width: 40%;
+    color: #5d5555;
+    font-weight: normal;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.input__label-content {
+    position: relative;
+    display: block;
+    padding: 1.6em 0;
+    width: 100%;
+}
+
+.graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+}
+
+.icon {
+    color: #ddd;
+    font-size: 150%;
+}
+
+/* Hoshi */
+.input--hoshi {
+    overflow: hidden;
+}
+
+.input__field--hoshi {
+    margin-top: 1em;
+    padding: 0.85em 0.15em;
+    width: 100%;
+    background: transparent;
+    color: #595F6E;
+}
+
+.input__label--hoshi {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 0.25em;
+    width: 100%;
+    height: calc(100% - 1em);
+    text-align: left;
+    pointer-events: none;
+}
+
+.input__label-content--hoshi {
+    position: absolute;
+}
+
+.input__field:focus+.input__label--hoshi::before,
+.input--filled .input__label--hoshi::before {
+    border-bottom: 0px solid #B9C1CA !important;
+    box-shadow: none;
+}
+
+.input__field:focus+.input__label--hoshi::after {
+    box-shadow: none;
+}
+
+.input__field:focus+.input__label--hoshi {
+    color: #fb2524;
+}
+
+.input__label--hoshi::before,
+.input__label--hoshi::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 10px);
+    border-bottom: 1px solid #B9C1CA;
+    box-shadow: 0 6px 7px -6px rgba(0, 0, 0, 0.31);
+}
+
+.input__label--hoshi::after {
+    margin-top: 2px;
+    border-bottom: 1px solid #fb2524;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.input__label--hoshi-color-1::after {
+    border-color: hsl(200, 100%, 50%);
+}
+
+.input__label--hoshi-color-2::after {
+    border-color: hsl(160, 100%, 50%);
+}
+
+.input__label--hoshi-color-3::after {
+    border-color: hsl(0Â°, 96%, 56%);
+}
+
+.input--filled .input__label--hoshi-color-3::after {
+    border-color: hsl(0, 100%, 50%);
+}
+
+.input--filled .input__label--hoshi::after {
+    box-shadow: none;
+}
+
+.input__field--hoshi:focus+.input__label--hoshi::after,
+.input--filled .input__label--hoshi::after {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.input__field--hoshi:focus+.input__label--hoshi .input__label-content--hoshi,
+.input--filled .input__label-content--hoshi {
+    -webkit-animation: anim-1 0.3s forwards;
+    animation: anim-1 0.3s forwards;
+}
+
+@-webkit-keyframes anim-1 {
+    50% {
+        opacity: 0;
+        -webkit-transform: translate3d(1em, 0, 0);
+        transform: translate3d(1em, 0, 0);
+    }
+
+    51% {
+        opacity: 0;
+        -webkit-transform: translate3d(-1em, -40%, 0);
+        transform: translate3d(-1em, -40%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, -40%, 0);
+        transform: translate3d(0, -40%, 0);
+    }
+}
+
+@keyframes anim-1 {
+    50% {
+        opacity: 0;
+        -webkit-transform: translate3d(1em, 0, 0);
+        transform: translate3d(1em, 0, 0);
+    }
+
+    51% {
+        opacity: 0;
+        -webkit-transform: translate3d(-1em, -40%, 0);
+        transform: translate3d(-1em, -40%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, -40%, 0);
+        transform: translate3d(0, -40%, 0);
+    }
+}
+
+
+.md-form {
+    position: relative;
+    margin: 25px 25px 10px 5px;
+}
+
+.md-form input[type=text],
+.md-form input[type=email],
+.md-form input[type=number],
+.md-form input[type=password],
+.md-form input[type=text],
+.md-form input[type=url],
+.md-form textarea.md-textarea {
+    -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    -o-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    background-color: transparent
+}
+
+.md-form input[type=text]:focus:not([readonly]),
+.md-form input[type=email]:focus:not([readonly]),
+.md-form input[type=number]:focus:not([readonly]),
+.md-form input[type=password]:focus:not([readonly]),
+.md-form textarea.md-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #fb2524
+}
+
+.md-form input[type=text]:focus:not([readonly])+label,
+.md-form input[type=email]:focus:not([readonly])+label,
+.md-form input[type=number]:focus:not([readonly])+label,
+.md-form input[type=password]:focus:not([readonly])+label,
+.md-form textarea.md-textarea:focus:not([readonly])+label {
+    color: #fb2524;
+    font-size: 13px;
+    font-weight: normal;
+    font-family: 'Raleway-Regular';
+}
+
+.md-form input[type=text]+label:after,
+.md-form input[type=email]+label:after,
+.md-form input[type=number]+label:after,
+.md-form input[type=password]+label:after,
+.md-form textarea.md-textarea+label:after {
+    content: "";
+    position: absolute;
+    top: 65px;
+    display: block;
+    opacity: 0;
+    -webkit-transition: .2s opacity ease-out, .2s color ease-out;
+    -o-transition: .2s opacity ease-out, .2s color ease-out;
+    transition: .2s opacity ease-out, .2s color ease-out
+}
+
+.md-form label {
+    position: absolute;
+    top: 20px;
+    left: 4px;
+    font-size: 13px;
+    font-weight: normal;
+    -webkit-transition: .2s ease-out;
+    -o-transition: .2s ease-out;
+    transition: .2s ease-out;
+    cursor: text;
+    color: #5d5555
+}
+
+.md-form label.active {
+    -webkit-transform: translateY(-140%);
+    -ms-transform: translateY(-140%);
+    transform: translateY(-140%)
+}
+
+.md-form textarea.md-textarea {
+    overflow-y: hidden;
+    padding: 12px 4px;
+    resize: none;
+    box-shadow: 0 6px 7px -6px rgba(0, 0, 0, 0.31);
+    ;
+}
+
+.md-form input[type=text].md-text,
+.md-form input[type=email].md-text,
+.md-form input[type=number].md-text {
+    overflow-y: hidden;
+    padding: 1.5rem 0;
+    resize: none;
+    box-shadow: 0 6px 7px -6px rgba(0, 0, 0, 0.31);
+}
+
+input[type=file].hoshi-file {
+    padding-left: 100px;
+    outline: none !important;
+}
+
+input[type=file].hoshi-file:focus,
+input[type=file].hoshi-file:active {
+    padding-left: 0px !important;
+    outline: none;
+}
+
+.md-text {
+    padding: 6px 12px 6px 4px !important;
+}
+
+::-webkit-file-upload-button {
+    background: #fff;
+    color: #5d5555;
+    padding: 5px 20px 5px 0px;
+    border: hidden;
+    outline: none;
+}
+
+.input--filled input[type=file].hoshi-file {
+    padding-left: 0px;
+    outline: none !important;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: none;
+}
